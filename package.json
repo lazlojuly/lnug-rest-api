@@ -2,11 +2,13 @@
   "name": "repo-service",
   "version": "0.0.1",
   "scripts": {
-    "start": "./node_modules/.bin/aglio -i ./api.apib --server -p 3000"
+    "start": "./node_modules/.bin/aglio -i ./api.apib --server -p 3000",
+    "mock": "./node_modules/.bin/drakov -f ./api.apib -p 3001"
   },
   "author": "lazlojuly",
   "license": "MIT",
   "dependencies": {
-    "aglio": "^2.2.1"
+    "aglio": "^2.2.1",
+    "drakov": "^1.0.1"
   }
 }
