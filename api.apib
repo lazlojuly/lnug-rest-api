@@ -29,21 +29,8 @@ the form of the links in the JSON body.
 ## User [/users/{user_id}]
 ### View User [GET]
 + Response 200 (application/json)
+    + Attributes (User)
 
-    + Attributes
-
-        + firstName: John
-        + lastName: Doe
-        + email: john.doe@email.com
-        + created: `2016-11-11T08:40:51.620Z`
-        + href: http://localhost:3001/users/1
-        + repos: (array)
-            * (object)
-                + name: angular-seed,
-                + href: http://localhost:3001/repos/1
-            * (object)
-                + name: flexbox-example,
-                + href: http://localhost:3001/repos/2
 
 ## Group Repos
 ## Repos Collection [/repos]
@@ -55,3 +42,20 @@ the form of the links in the JSON body.
 ## Repo [/repos/{repo_id}]
 ### View Repo [GET]
 ### Delete Repo [DELETE]
+
+
+# Data Structures
+
+## User
++ firstName: John
++ lastName: Doe
++ email: john.doe@email.com
++ created: `2016-11-11T08:40:51.620Z`
++ href: http://localhost:3001/users/1
++ repos: (array)
+    * (object)
+        + name: angular-seed,
+        + href: http://localhost:3001/repos/1
+    * (object)
+        + name: flexbox-example,
+        + href: http://localhost:3001/repos/2
