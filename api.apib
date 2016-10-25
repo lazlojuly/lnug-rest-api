@@ -30,22 +30,20 @@ the form of the links in the JSON body.
 ### View User [GET]
 + Response 200 (application/json)
 
-        {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john.doe@email.com",
-            "created": "2016-11-11T08:40:51.620Z",
-            "href": "http://localhost:3001/users/1",
-            "repos": [
-                {
-                    "name": "angular-seed-karma-mocha-sinon-chai",
-                    "href": "http://localhost:3001/repos/1"
-                }, {
-                    "name": "flexbox-example",
-                    "href": "http://localhost:3001/repos/2"
-                }
-            ]
-        }
+    + Attributes
+
+        + firstName: John
+        + lastName: Doe
+        + email: john.doe@email.com
+        + created: `2016-11-11T08:40:51.620Z`
+        + href: http://localhost:3001/users/1
+        + repos: (array)
+            * (object)
+                + name: angular-seed,
+                + href: http://localhost:3001/repos/1
+            * (object)
+                + name: flexbox-example,
+                + href: http://localhost:3001/repos/2
 
 ## Group Repos
 ## Repos Collection [/repos]
