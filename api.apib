@@ -3,3 +3,18 @@ FORMAT: 1A
 # Repo Service
 
 This is a RESTful API for repository management
+
+
+## Group API Root
+
+This resource offers the initial API capabilities in
+the form of the links in the JSON body.
+
+## API Root Collection [/]
+### List All Resources [GET]
++ Response 200 (application/json)
+
+        [
+            { "href": "http://localhost:3001/users" },
+            { "href": "http://localhost:3001/repos" }
+        ]
