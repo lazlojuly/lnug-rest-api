@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "scripts": {
     "start": "./node_modules/.bin/aglio -i ./api.apib --server -p 3000",
-    "mock": "./node_modules/.bin/drakov -f ./api.apib -p 3001"
+    "mock": "./node_modules/.bin/drakov -f ./api.apib -p 3001",
+    "test": "./node_modules/.bin/dredd"
   },
   "author": "lazlojuly",
   "license": "MIT",
   "dependencies": {
     "aglio": "^2.2.1",
-    "drakov": "^1.0.1"
+    "drakov": "^1.0.1",
+    "dredd": "^2.2.2"
   }
 }
