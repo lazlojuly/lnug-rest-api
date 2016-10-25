@@ -24,7 +24,19 @@ the form of the links in the JSON body.
 ### List All Users [GET]
 + Response 200 (application/json)
     + Attributes (array[User])
+
 ### Create a New User [POST]
++ Request (application/json)
+
+    + Attributes (User Base)
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /users/1
+
+    + Attributes (User)
 
 
 ## Group User
@@ -37,27 +49,73 @@ the form of the links in the JSON body.
 ## Group Repos
 ## Repos Collection [/repos]
 ### List All Repos [GET]
-### Create a New Repo [POST]
++ Response 200 (application/json)
+    + Attributes (array[Repo,Repo 2])
 
+### Create a New Repo [POST]
++ Request (application/json)
+
+    + Attributes (Repo Post)
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /repos/1
+
+    + Attributes (Repo Response)
 
 ## Group Repo
 ## Repo [/repos/{repo_id}]
 ### View Repo [GET]
++ Response 200 (application/json)
+    + Attributes (Repo Response)
+
 ### Delete Repo [DELETE]
++ Response 204
 
 
 # Data Structures
 
-## User
+## User Base
 + firstName: John
 + lastName: Doe
 + email: john.doe@email.com
+
+## User
++ Include (User Base)
++ Include (User Base)
 + created: `2016-11-11T08:40:51.620Z`
 + href: http://localhost:3001/users/1
-+ repos: (array)
++ repos (array)
     * (object)
         + name: angular-seed,
         + href: http://localhost:3001/repos/1
     * (object)
         + name: flexbox-example,
         + href: http://localhost:3001/repos/2
+
+## Repo Post
++ name: angular-seed-karma-mocha-sinon-chai
++ href: http://localhost:3001/repos/1
++ fork: true (boolean)
++ git_url: git://github.com/lazlojuly/angular-seed-karma-mocha-sinon-chai.git
+
+## Repo Response
++ Include (Repo Post)
++ owner (object)
+    + name: lazlojuly
+    + href: http://localhost:3001/users/1
++ private: false
++ description: Forked angular-seed project with mocha-sinon-chai test stack
+
+## Repo 2
++ name: flexbox-example
++ href: http://localhost:3001/repos/2
++ fork: true (boolean)
++ git_url: git://github.com/lazlojuly/flexbox-example.git
++ owner (object)
+    + name: lazlojuly
+    + href: http://localhost:3001/users/1
++ private: false
++ description: Multi-column flexbox layout
